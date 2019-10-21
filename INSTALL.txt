@@ -1,0 +1,84 @@
+Installing ``Products.CJKSplitter``
+===================================
+
+
+Installing via ``easy_install``
+-------------------------------
+
+1. In your virtualenv::
+
+   $ bin/easy_install Products.CJKSplitter
+
+2. Restart zope.
+
+
+Installing via ``zc.buildout``
+------------------------------
+
+1. Add ``Products.CJKSplitter`` to the eggs for your Zope instance.
+
+2. Re-run ``bin/buildout``.
+
+3. Restart zope.
+
+
+Installing manually
+-------------------
+
+1. Unpack the tarball.
+
+2. Move / copy / link the 'Products/CJKSplitter' subdirectory into
+   Zope's Products dir
+
+3. Restart zope.
+
+
+CJK native encodings(non-utf8) support
+--------------------------------------
+
+If you are using python 2.4 and above, CJK encodings are supported by
+default.  Or, 
+
+- If you are use linux, you should install the extra-encoding package:
+
+  http://cjkpython.i18n.org/
+
+- If you use Windows, then you can choose ZopeChinaPak:
+
+  http://www.zope.org/Members/panjunyong/ZopeChinaPak
+
+
+Add to the catalog
+------------------
+
+1. Add a ZCTextIndex Lexicon, selecting the ``CJKSplitter`` splitter.
+
+2. Add a ZCTextIndex, and select the Lexicon created in step 1.
+
+
+Upgrading an existing ZCTextIndex
+---------------------------------
+
+1. Examine the index in the ZMI to determine the name of the lexicon it
+   uses, e.g. ``text_lexicon``
+
+2. Rename the existing lexicon, e.g. from ``text_lexicon`` to
+   ``text_lexicon-ASIDE``.
+
+3. Create a new lexicon with the original name (``text_lexicon``), choosing
+   the ``CJKSplitter`` splitter.
+
+4. Re-index the index(es) which used the lexicon.
+
+5. Once you have verified that the new lexicon works, delete the one
+   you renamed in step 2.
+
+
+Upgrade
+-------
+
+0.1 to 0.5
+     you should reindex all the ZCTextIndex in your catalog
+
+0.2 to 0.5
+     no exta upgrade needed. (not tested)

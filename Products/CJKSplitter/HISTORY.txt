@@ -1,0 +1,85 @@
+``Products.CJKSplitter`` Changelog
+==================================
+
+0.8 (unreleased)
+----------------
+
+- Organized the product for distribution as a Python egg.
+
+- Made the glob split result the same as non-glob split.
+
+0.7.3 (2005-6-15)
+-----------------
+
+- Fixed a bug which may cause multi-Chinese Character search to fail.
+
+- Fixed a bug, which may cause Chinese/English combined search to fail.
+  Such as: "ƒ⁄»›π‹¿ÌPlone"
+
+0.7.2
+-----
+
+- Fixed serious bug which may double index; and add more tests.
+
+- Fixed bug when encode raises an error.
+
+- Make it compatible with new version of zope, it seems single Chinese
+  character doesn't work with Zope 2.7.3
+
+0.7.1
+-----
+
+- Better support for single Chinese charactor search.
+
+0.7
+---
+
+- Correct the wrong CJK range.
+
+0.6
+---
+
+- Support single Chinese character search now!
+
+- Some code cleaner.
+
+0.5
+---
+
+- Use regular expression to compatible with defualt English white space
+  splitter
+
+- Remove configuration file: much simpler code, easy to install, easy to use.
+
+- Support multiple encodings: unicode/utf-8/gb18030/gbk/gb2312/mbcs/big5.
+  Provide 3 splitter:
+
+  * 'CJK splitter' : support unicode/utf-8 encoding. this encoding is
+    compatible with version 0.1
+
+  * 'CJK GB splitter' : support unicode/gb18030/gbk/gb2312/mbcs encodings.
+
+  * 'CJK BIG5 splitter' : support unicode/big5/mbcs encodings
+
+- Better encoding handling to avoid exception ('replace')
+
+- Smaller index storage for CJK: index stored as unicode(2 byts) but not
+  utf-8(3 bytes)
+
+- Support English globbing.
+
+- More precise CJK char recongnition (``\u4E00``-``\u9FFF``).
+
+- Maybe better performance, not tested.
+
+- Better documentation (thanks bjorn!).
+
+0.2
+---
+
+- This is bjorn's (bjorn@exoweb.net) contribution.
+
+0.1
+---
+
+- Initial release, support utf-8 encoding only.

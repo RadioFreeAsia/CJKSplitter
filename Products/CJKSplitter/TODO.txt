@@ -1,0 +1,10 @@
+TODO
+
+  - Normalize full-width charcter to half-width
+
+  - Support TextIndexNG3
+
+  - better Chinese Splitter:
+
+    http://blog.autrijus.org/archives/000024.html
+
